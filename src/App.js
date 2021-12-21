@@ -1,12 +1,22 @@
 import React from 'react';
-import './App.css';
+import routes from './routes';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Login from './components/Login';
+import Navbar from './components/Navbar';
 
-function App() {
+function App(){
   return (
-    <div className="App">
-    <h1>Trivia App</h1>
-    </div>
-  );
-}
+    <>
+    <Navbar />
+    <Login />
+    <Router>
+   
+ 
+    {routes}
+  
+    </Router>
+    </>
+  )
+};
 
 export default App;
