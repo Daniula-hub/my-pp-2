@@ -44,10 +44,16 @@ const Login = (props) => {
                                    <input type="text" className="form-control" id="inputAge" placeholder="Age" />                                   
                               </div>
                               <div className="form-group col-md-6">
-                                   <label for="inputCountry">Country of Residency</label>
+                                   <label for="inputCountry">In which Continent do you live?</label>
                                    <select id="inputCountry" className="form-control">
-                                   <option selected>Choose...</option>
-                                   <option>...</option>
+                                   <option selected>Select one</option>
+                                   <option value="1">Europe</option>
+                                   <option value="2">South America</option>
+                                   <option value="3">North America</option>
+                                   <option value="4">Asia</option>
+                                   <option value="5">Africa</option>
+                                   <option value="6">Australia/Oceania</option>
+                                   <option value="7">Antarctica</option>
                                    </select>
                               </div>
                          </div>
