@@ -16,7 +16,7 @@ const Home = (props) => {
                               <div className="form-row">
                               <div className="form-group col-md-12">
                                    <label for="inputGender">Select Category</label>
-                                   <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                   <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                                         <option selected>Select one option</option>
                                         <option value="1">General Knowledge</option>
                                         <option value="2">Books</option>

@@ -4,23 +4,24 @@ import React from 'react';
 const Navbar = (props) => {
 
      return (
-          <nav className="navbar navbar-inverse">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                <div className="container-fluid">
-               <div className="navbar-header">
-                    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                    </button>
-                    <a className="navbar-brand" id="menuTitle" href="#">Quizz Me</a>
-               </div>
-               <div className="collapse navbar-collapse" id="myNavbar">
-                    <ul className="nav navbar-nav">
-                    <li><a href="/highestscore">Home</a></li>
-                    <li><a href="/highestscore">Highest Scores</a></li>
-                    <li><a href="/metrics">Metrics</a></li>
+               <a className="navbar-brand" href="#">Quizz Me</a>
+               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+               </button>
+               <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul className="navbar-nav">
+                         <li className="nav-item">
+                              <a className="nav-link active" aria-current="page" href="/home">Home</a>
+                         </li>
+                         <li className="nav-item">
+                              <a className="nav-link" href="/highestscores">Highest Scores</a>
+                         </li>
+                         <li className="nav-item">
+                              <a className="nav-link" href="metrics">Metrics</a>
+                         </li>
                     </ul>
-
                </div>
                </div>
           </nav>

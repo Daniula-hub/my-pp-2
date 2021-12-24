@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
+const authCtrl = require('./controllers/authController');
 
 const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 
@@ -44,11 +45,11 @@ app.use(express.json());
 // endpoints
 
 // auth
-// app.post("/auth/register", authCtrl.register);
-// app.post("/auth/login", authCtrl.login);
 // app.get("/auth/logout", authCtrl.logout);
 // app.get("/auth/getUser", authCtrl.getUser);
-    
+app.get("/auth/login", authCtrl.login);
+app.post("/auth/register", authCtrl.register);
+
 
 //NODEMAILER
 

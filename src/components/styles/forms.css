@@ -1,0 +1,16 @@
+input {
+    margin-bottom: 16px;
+  }
+  
+  label {
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  
+  form {
+    margin-top: 10rem;
+  }
+  
+  button {
+    width: 200px;
+  }

@@ -1,74 +1,62 @@
 import React from 'react';
+import axios from "axios";
+import { setUser } from "../redux/authReducer";
+import { useState } from "react";
+import { connect } from "react-redux";
+import './styles/forms.css';
 
 const Login = (props) => {
+     const [userName, setUserName] = useState("");
+     const [password, setPassword] = useState("");
+
+     const handleLogin = () => {
+          axios
+            .get(`/auth/login?userName=${userName}&password=${password}`)
+            .then((res) => {
+              props.setUser(res.data.user);
+              props.history.push("/home");
+            })
+            .catch((err) => console.log(err));
+     };
+        
+     const handleRegister = () => {
+          {
+               window.location = 'http://localhost:3000/register'
+          }
+     };
 
      return (
-          <div classNameName='container-fluid'>
-               <div classNameName='row'>
-                    <div classNameName='col-2'></div>
-                    <div classNameName='col-8'>
-                    <form>
-                         <div className="form-row">
-                              <div className="form-group col-md-6">
-                                   <label for="inputEmail4">User Name</label>
-                                   <input type="email" className="form-control" id="inputEmail4" placeholder="User Name" />
+          <div className='container-fluid'>
+               <div className='row'>
+                    <div className='col-3'></div>
+                    <div className='col-6'>
+                         <form>
+                              <div className="row">
+                                   <div className="form-group col-md-6">
+                                        <label htmlFor="inputUserName">User Name</label>
+                                        <input type="text" className="form-control" id="inputUserName" placeholder="User Name" onChange={(e) => setUserName(e.target.value)} />
+                                   </div>
+                                   <div className="form-group col-md-6">
+                                        <label htmlFor="inputPassword4">Password</label>
+                                        <input type="password" className="form-control" id="inputPassword4" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                                   </div>
                               </div>
-                              <div className="form-group col-md-6">
-                                   <label for="inputPassword4">Password</label>
-                                   <input type="password" className="form-control" id="inputPassword4" placeholder="Password" />
+                              <div className="row">
+                                   <div className='col-3'></div>
+                                   <div className="d-flex justify-content-center form-group col-3">
+                                        <button type="button" className="btn btn-outline-success btn-lg" onClick={handleLogin}>Log In</button>
+                                   </div>
+                                   <div className="d-flex justify-content-center form-group col-3">
+                                        <button type="button" className="btn btn-dark btn-lg" onClick={handleRegister}>Register</button>
+                                   </div>
+                                   <div className='col-3'></div>
                               </div>
-                         </div>
-                         <div className="form-row">
-                              <div className="form-group col-md-6">
-                                   <label for="inputGender">Gender</label>
-                                   <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                        <option selected>Select one gender</option>
-                                        <option value="1">Female</option>
-                                        <option value="2">Male</option>
-                                        <option value="3">Other</option>
-                                   </select>
-                              </div>
-                              <div className="form-group col-md-6">
-                                   <label for="inputEducation">Education</label>
-                                   <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                        <option selected>Select one education level</option>
-                                        <option value="1">School</option>
-                                        <option value="2">High School</option>
-                                        <option value="3">College</option>
-                                   </select>
-                              </div>
-                         </div>
-                         <div className="form-row">
-                              <div className="form-group col-md-6">
-                                   <label for="inputAge">Age</label>
-                                   <input type="text" className="form-control" id="inputAge" placeholder="Age" />                                   
-                              </div>
-                              <div className="form-group col-md-6">
-                                   <label for="inputCountry">In which Continent do you live?</label>
-                                   <select id="inputCountry" className="form-control">
-                                   <option selected>Select one</option>
-                                   <option value="1">Europe</option>
-                                   <option value="2">South America</option>
-                                   <option value="3">North America</option>
-                                   <option value="4">Asia</option>
-                                   <option value="5">Africa</option>
-                                   <option value="6">Australia/Oceania</option>
-                                   <option value="7">Antarctica</option>
-                                   </select>
-                              </div>
-                         </div>
-                         <div className="form-row">
-                              <div className="form-group col-md-6">
-                                   <button type="submit" className="btn btn-primary btn-lg">Sign in</button>
-                              </div>
-                         </div>
-                    </form>
+                         </form>
                     </div>
-                    <div classNameName='col-2'></div>
+                    <div className='col-3'></div>
                </div>
-               
           </div>
      );
 }
 
-export default Login;
+export default connect(null, { setUser })(Login);
