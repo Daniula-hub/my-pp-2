@@ -13,7 +13,7 @@ const Login = (props) => {
           axios
             .get(`/auth/login?userName=${userName}&password=${password}`)
             .then((res) => {
-              props.setUser(res.data.user);
+              setUser(res.data.user);
               props.history.push("/home");
             })
             .catch((err) => console.log(err));

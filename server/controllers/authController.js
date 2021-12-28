@@ -26,7 +26,7 @@ const login = async ( req, res ) => {
 
     try{
         const userArr = await db.auth.find_user_by_username(userName);
-        if(userArr[0]){
+        if(userArr.length > 0){
             console.log("User: ", userArr[0]);
             const credentialMatch = bcrypt.compareSync(password, userArr[0].password);
             console.log("Password comparison: ", credentialMatch);
@@ -34,7 +34,7 @@ const login = async ( req, res ) => {
                 req.session.user = userArr[0];
                 res.status(200).send(userArr[0]);
             }else{
-                res.sendStatus(403);
+                res.sendStatus(500);
             }
         }
     }catch(e) {
