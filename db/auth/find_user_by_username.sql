@@ -1,2 +1,2 @@
-SELECT user_name FROM users
+SELECT user_name, password FROM users
 WHERE user_name = $1;

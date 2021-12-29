@@ -13,7 +13,7 @@ const Navbar = (props) => {
                <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav">
                          <li className="nav-item">
-                              <a className="nav-link active" aria-current="page" href="/home">Home</a>
+                              <a className="nav-link active" aria-current="page" href="/game">Game</a>
                          </li>
                          <li className="nav-item">
                               <a className="nav-link" href="/highestscores">Highest Scores</a>

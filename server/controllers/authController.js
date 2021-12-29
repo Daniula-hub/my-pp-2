@@ -22,14 +22,17 @@ const register = ( req, res ) => {
 
 const login = async ( req, res ) => {
     const { userName, password } = req.query;
+    console.log(password);
     const db = req.app.get('db');
 
     try{
         const userArr = await db.auth.find_user_by_username(userName);
         if(userArr.length > 0){
+            const hashedpassword = userArr[0].password; 
             console.log("User: ", userArr[0]);
             const credentialMatch = bcrypt.compareSync(password, userArr[0].password);
             console.log("Password comparison: ", credentialMatch);
+            console.log(userArr[0].password)
             if(credentialMatch){
                 req.session.user = userArr[0];
                 res.status(200).send(userArr[0]);
