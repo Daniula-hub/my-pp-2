@@ -22,16 +22,16 @@ const register = ( req, res ) => {
 
 const login = async ( req, res ) => {
     const { userName, password } = req.query;
-    console.log(password);
+    // console.log(password);
     const db = req.app.get('db');
 
     try{
         const userArr = await db.auth.find_user_by_username(userName);
         if(userArr.length > 0){
-            console.log("User: ", userArr[0]);
+            // console.log("User: ", userArr[0]);
             const credentialMatch = bcrypt.compareSync(password, userArr[0].password);
-            console.log("Password comparison: ", credentialMatch);
-            console.log(userArr[0].password)
+            // console.log("Password comparison: ", credentialMatch);
+            // console.log(userArr[0].password)
             if(credentialMatch){
                 req.session.user = userArr[0];
                 res.status(200).send(userArr[0]);
@@ -47,8 +47,17 @@ const login = async ( req, res ) => {
 
 const getUser = ( req, res ) => {
     const user = req.session.user;
+    const db = req.app.get('db');
+    
     if(user){
-        res.status(200).send(user);
+        db.auth.get_user_by_name(user.user_name)
+        .then(userData => {  
+            res.status(200).send(userData[0]);
+        })
+        .catch(err => {
+            console.log("User not logged in!");
+            res.sendStatus(404);
+        })
     }else {
         res.sendStatus(404);
     }

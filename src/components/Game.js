@@ -10,6 +10,7 @@ const Game = (props) => {
      const [options, setOptions] = useState();
      const [currentQuestion, setCurrentQuestion] = useState(0);
      const [score, setScore] = useState(0);
+     const [user, setUser] = useState({});
           
      useEffect(() => {
           setOptions(
@@ -22,13 +23,28 @@ const Game = (props) => {
      }, [currentQuestion, questions]);
 
      const handleShuffle = (options) => {
-     return options.sort(() => Math.random() - 0.5);
+          return options.sort(() => Math.random() - 0.5);
      };
+
+     const getUser = () => {
+          axios
+          .get(`/auth/getUser`)
+          .then(res => {
+               setUser(res.data);
+          })
+          .catch(err => {
+               console.log("There was an error retrieving the questions from the API: ", err);
+          })
+     }
+
+     useEffect(() => {
+          if(Object.keys(user).length === 0) getUser();
+     }, [user]);
 
      const handlerStartGame = () => {
           axios
           .get(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`)
-          .then(res => {               
+          .then(res => {
                setQuestions(res.data.results);
           })
           .catch(err => {
@@ -100,19 +116,36 @@ const Game = (props) => {
                          </div>
                     </div> : 
                     (
-                         <div>
-                              <h1 className='welcome'>Welcome ...Name</h1>
-                              <h2 className='score'>Score: {score}</h2>
-                              <Question 
-                                   currentQuestion={currentQuestion}
-                                   setCurrentQuestion={setCurrentQuestion}
-                                   questions={questions}
-                                   options={options}
-                                   correct={questions[currentQuestion].correct_answer}
-                                   score={score}
-                                   setScore={setScore}
-                                   setQuestions={setQuestions}
-                              />
+                         <div className='container-fluid'>
+                              <div className='row'>
+                                   <div className='col-2'></div>
+                                   <div className='col-2'>
+                                        <img src={user.profile_pic} id="profile_pic"/>
+                                   </div>
+                                   <div className='col-4'>
+                                        <h1 className='welcome'>Welcome {user.user_name}!</h1>                                        
+                                   </div>
+                                   <div className='col-2' >
+                                        <h1 className='score'>Score: {score}</h1>
+                                   </div>
+                              </div>
+                              <div className='row'>
+                                   <div className='col-2'></div>
+                                   <div className='col-8'>
+                                        <Question 
+                                             currentQuestion={currentQuestion}
+                                             setCurrentQuestion={setCurrentQuestion}
+                                             questions={questions}
+                                             options={options}
+                                             correct={questions[currentQuestion].correct_answer}
+                                             score={score}
+                                             setScore={setScore}
+                                             setQuestions={setQuestions}
+                                             user={user}
+                                        />
+                                   </div>
+                                   <div className='col-2'></div>
+                              </div>
                          </div>
                     )
                }

@@ -1,9 +1,11 @@
 import React from 'react';
-import './styles/Question.css'
+import axios from "axios";
 import { getUser } from "../redux/authReducer";
 import { useState } from "react";
 import { useHistory } from "react-router";
 import ErrorMessage from "./ErrorMessage";
+import './styles/Question.css'
+import './styles/errorMessage.css';
 
 
 const Question = ({
@@ -15,6 +17,7 @@ const Question = ({
   setScore,
   score,
   setQuestions,
+  user
 }) => {
   const [selected, setSelected] = useState();
   const [error, setError] = useState(false);
@@ -35,7 +38,18 @@ const Question = ({
 
   const handleNext = () => {
     if (currentQuestion > 8) {
-      history.push("/result");
+      axios
+        .post('/saveScore', {user, score})
+        .then(res => {
+          history.push({
+            pathname: '/highestscores',
+            state: {
+              score : score,
+              user : user
+            }
+          })
+        })
+        .catch()      
     } else if (selected) {
       setCurrentQuestion(currentQuestion + 1);
       setSelected();
@@ -49,13 +63,13 @@ const Question = ({
 
   return (
     <div className="question">      
-      <h1>Question # {currentQuestion + 1} </h1>
-      <h2>{questions[currentQuestion].category}</h2>
+      <h2>Question #{currentQuestion + 1}</h2>
+      <h3>{questions[currentQuestion].category}</h3>
 
       <div className="singleQuestion">
-        <h2>{questions[currentQuestion].question}</h2>
+        <h3>{questions[currentQuestion].question}</h3>
+        {error && <ErrorMessage>{error}</ErrorMessage>}
         <div className="options">
-          {error && <ErrorMessage>{error}</ErrorMessage>}
           {options &&
             options.map((i) => (
               <button
@@ -69,8 +83,8 @@ const Question = ({
             ))}
         </div>
         <div className="controls">
-          <button className='quit' type="button" onClick={() => handleQuit()}> Quit </button>
-          <button className='submit' type='button' onClick={handleNext}> {currentQuestion > 20 ? "Submit" : "Next Question"} </button>
+          <button className='btn btn-warning btn-lg' type="button" onClick={() => handleQuit()}> Quit </button>
+          <button className='btn btn-success btn-lg' type='button' onClick={handleNext}> {currentQuestion > 8 ? "Submit" : "Next Question"} </button>
         </div>
       </div>
     </div>
