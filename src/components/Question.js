@@ -1,8 +1,10 @@
 import React from 'react';
+import './styles/Question.css'
 import { getUser } from "../redux/authReducer";
 import { useState } from "react";
 import { useHistory } from "react-router";
 import ErrorMessage from "./ErrorMessage";
+
 
 const Question = ({
   currentQuestion,
@@ -47,8 +49,8 @@ const Question = ({
 
   return (
     <div className="question">      
-      <h1>Question {currentQuestion + 1} :</h1>
-      <h2>Category: {questions[currentQuestion].category}</h2>
+      <h1>Question # {currentQuestion + 1} </h1>
+      <h2>{questions[currentQuestion].category}</h2>
 
       <div className="singleQuestion">
         <h2>{questions[currentQuestion].question}</h2>
@@ -67,8 +69,8 @@ const Question = ({
             ))}
         </div>
         <div className="controls">
-          <button type="button" onClick={() => handleQuit()}> Quit </button>
-          <button type='button' onClick={handleNext}> {currentQuestion > 20 ? "Submit" : "Next Question"} </button>
+          <button className='quit' type="button" onClick={() => handleQuit()}> Quit </button>
+          <button className='submit' type='button' onClick={handleNext}> {currentQuestion > 20 ? "Submit" : "Next Question"} </button>
         </div>
       </div>
     </div>
