@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import Question from "./Question";
+import './styles/Game.css';
 
 const Game = (props) => {
      const [category, setCategory] = useState(0);
@@ -100,8 +101,8 @@ const Game = (props) => {
                     </div> : 
                     (
                          <div>
-                              <h1>Welcome ...Name</h1>
-                              <h2>Score: {score}</h2>
+                              <h1 className='welcome'>Welcome ...Name</h1>
+                              <h2 className='score'>Score: {score}</h2>
                               <Question 
                                    currentQuestion={currentQuestion}
                                    setCurrentQuestion={setCurrentQuestion}

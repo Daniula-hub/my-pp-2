@@ -14,7 +14,7 @@ const Login = (props) => {
             .get(`/auth/login?userName=${userName}&password=${password}`)
             .then((res) => {
               setUser(res.data.user);
-              props.history.push("/home");
+              props.history.push("/game");
             })
             .catch((err) => console.log(err));
      };
