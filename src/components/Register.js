@@ -17,11 +17,15 @@ const Login = (props) => {
           axios
             .post("/auth/register", { userName, password, email, gender, education, user_age })
             .then((res) => {
-              props.setUser(res.data.user);
-              props.history.push("/home");
+               props.setUser({ user_name: res.data.user_name,
+                    profile_pic: res.data.profile_pic,
+                    highest_score: res.data.highest_score
+               });
+              props.history.push("/game");
             })
             .catch((err) => console.log(err));
-        };
+     };
+     
      return (
           <div className='container-fluid'>
                <div className='row'>
@@ -45,7 +49,7 @@ const Login = (props) => {
                                    </div>
                                    <div className="form-group col-md-6">
                                         <label htmlFor="inputAge">Age</label>
-                                        <input type="text" className="form-control" id="inputAge" placeholder="Age" onChange={(e) => setAge(e.target.value)}/>                                   
+                                        <input type="number" className="form-control" id="inputAge" placeholder="Age" onChange={(e) => setAge(e.target.value)}/>                                   
                                    </div>
                               </div>
                               <div className="row">

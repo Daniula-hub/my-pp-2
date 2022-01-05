@@ -1,5 +1,6 @@
 import { Switch, Route, Redirect } from "react-router-dom";
-import  Login  from './components/Login';
+import  LogIn  from './components/LogIn';
+import  LogOut  from './components/LogOut';
 import  Register  from './components/Register';
 import Game from './components/Game';
 import HighestScores from './components/HighestScores';
@@ -15,7 +16,8 @@ export default (
           )
       }}
     />
-    <Route exact path="/login" component={Login} />
+    <Route exact path="/login" component={LogIn} />
+    <Route path="/logout" component={LogOut} />
     <Route path="/register" component={Register}/> 
     <Route path="/game" component={Game}/>
     <Route path="/highestscores" component={HighestScores}/>

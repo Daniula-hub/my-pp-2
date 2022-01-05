@@ -4,7 +4,6 @@ import axios from "axios";
 import './styles/highestScores.css';
 
 const HighestScores = (props) => {
-     const [counter, setCounter] = useState(0);
      const [highestScores, setHighestScores] = useState([]);
      let user;
      let score;
@@ -20,12 +19,33 @@ const HighestScores = (props) => {
      const fetchData = () => {
           axios
           .get('/getHighestScores')
-          .then(res => {
-               setHighestScores(res.data);
+          .then(res => {               
+               setHighestScores(setCounters(res.data));
           })
           .catch(err => {
                console.log("Highest Scores couldn't load: ", err)
           })
+     }
+
+     const setCounters = (data) => {
+          try {
+               for (const key in data) {
+                    if (!isNaN(key) ) {
+                         data[key]['counter'] = parseInt(key) + 1;
+                    }
+               }
+
+               return data;               
+          } catch (error) {
+               console.log("Counters couldn't be defined by object keys, instead it was set by default. Probably the object keys were not numbers.", error);
+               
+               for (let i= 0; i < data.length; i++) {
+                    let counter = i + 1;
+                    data[i]['counter'] = counter;
+               }
+
+               return data;
+          }
      }
 
      return (
@@ -42,10 +62,10 @@ const HighestScores = (props) => {
                                    </tr>
                               </thead>
                               <tbody>
-                                   {highestScores.map(score => {                          
+                                   {highestScores.map(score => {
                                         return (
-                                             <tr key={ counter + 1 }>
-                                                  <th>{ counter + 1 }</th>
+                                             <tr key={ score.counter }>
+                                                  <th>{ score.counter }</th>
                                                   <th>{ score.user_name }</th>
                                                   <th>{ score.highest_score }</th> 
                                              </tr>

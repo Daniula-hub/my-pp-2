@@ -45,8 +45,8 @@ app.use(express.json());
 // endpoints
 
 // auth
-// app.get("/auth/logout", authCtrl.logout);
 app.get("/auth/login", authCtrl.login);
+app.get("/auth/logout", authCtrl.logout);
 app.get("/auth/getUser", authCtrl.getUser);
 app.get("/getHighestScores", highestScoresCtrl.getScores);
 app.post("/auth/register", authCtrl.register);

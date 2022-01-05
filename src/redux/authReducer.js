@@ -1,13 +1,16 @@
 // initial state
 const initialState = {
-    user: null,
-    profile_pic: ''
+    user_redux: {
+        user_name: null,
+        profile_pic: '',
+        highest_score: 0
+    }
 }
 
 // action types
 const SET_USER = 'SET_USER'
-export const LOGOUT_USER = 'LOGOUT_USER';
-export const UPDATE_USER = 'UPDATE_USER';
+const LOGOUT_USER = 'LOGOUT_USER';
+const UPDATE_USER = 'UPDATE_USER';
 
 // action builders
 export function setUser (user){
@@ -18,9 +21,9 @@ export function setUser (user){
 }
 
 export const updateUser = (user) => ({
-   type:UPDATE_USER,
+   type: UPDATE_USER,
    payload: {
-       username:user.username,
+       username: user.user_name,
        profilePic: user.profile_pic
    }
 });
@@ -43,7 +46,7 @@ export function getUser(){
 export default function authReducer(state = initialState, action){
     switch (action.type){
         case SET_USER:
-            return {...state, user: action.payload}
+            return {...state, user_redux: action.payload}
         case GET_USER:
             return {
                 ...state
@@ -56,12 +59,14 @@ export default function authReducer(state = initialState, action){
            }
         case LOGOUT_USER:
            return {
-               ...state,
-               username: '',
-               profilePic: '',
-       }
+                ...state,
+                user_redux: {
+                    user_name: null,
+                    profile_pic: '',
+                    highest_score: 0
+                }
+            }
         default:
             return {...state}
     }
 }
-

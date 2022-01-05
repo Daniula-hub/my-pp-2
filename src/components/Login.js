@@ -13,7 +13,10 @@ const Login = (props) => {
           axios
             .get(`/auth/login?userName=${userName}&password=${password}`)
             .then((res) => {
-              setUser(res.data.user);
+               props.setUser({ user_name: res.data.user_name,
+                    profile_pic: res.data.profile_pic,
+                    highest_score: res.data.highest_score
+               });
               props.history.push("/game");
             })
             .catch((err) => console.log(err));

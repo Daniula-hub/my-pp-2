@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from "axios";
-import { getUser } from "../redux/authReducer";
 import { useState } from "react";
 import { useHistory } from "react-router";
 import ErrorMessage from "./ErrorMessage";
@@ -61,13 +60,19 @@ const Question = ({
     setQuestions();
   };
 
+  const htmlDecode = (input) => {
+    var e = document.createElement('div');
+    e.innerHTML = input;
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
+
   return (
     <div className="question">      
       <h2>Question #{currentQuestion + 1}</h2>
       <h3>{questions[currentQuestion].category}</h3>
-
+     
       <div className="singleQuestion">
-        <h3>{questions[currentQuestion].question}</h3>
+        <h3 dangerouslySetInnerHTML={{ __html: htmlDecode(questions[currentQuestion].question) }} />
         {error && <ErrorMessage>{error}</ErrorMessage>}
         <div className="options">
           {options &&
@@ -77,9 +82,9 @@ const Question = ({
                 key={i}
                 onClick={() => handleCheck(i)}
                 disabled={selected}
-              >
-                {i}
-              </button>
+                dangerouslySetInnerHTML={{ __html: htmlDecode(i)}}
+              />
+                
             ))}
         </div>
         <div className="controls">
