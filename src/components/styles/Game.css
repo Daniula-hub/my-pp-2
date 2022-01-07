@@ -1,16 +1,6 @@
-.welcome {
-    margin-top: 60px;
-    padding-bottom: 30px;
-    color: rgb(39, 136, 169);
-  }
-  
   .score {
     margin-top: 60px;
     /* padding-top: 10px; */
     color: rgb(39, 136, 169);
   }
   
-  #profile_pic {
-    width: 9rem;
-    height: 9rem;
-  }

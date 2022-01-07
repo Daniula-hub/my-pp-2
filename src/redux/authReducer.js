@@ -1,6 +1,7 @@
 // initial state
 const initialState = {
     user_redux: {
+        user_id: null,
         user_name: null,
         profile_pic: '',
         highest_score: 0
@@ -23,9 +24,10 @@ export function setUser (user){
 export const updateUser = (user) => ({
    type: UPDATE_USER,
    payload: {
-       username: user.user_name,
-       profilePic: user.profile_pic,
-       highest_score: user.highest_score
+        user_id: user.user_id,
+        username: user.user_name,
+        profilePic: user.profile_pic,
+        highest_score: user.highest_score
    }
 });
 
@@ -62,6 +64,7 @@ export default function authReducer(state = initialState, action){
            return {
                 ...state,
                 user_redux: {
+                    user_id: null,
                     user_name: null,
                     profile_pic: '',
                     highest_score: 0

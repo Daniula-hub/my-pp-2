@@ -15,7 +15,7 @@ const Navbar = (props) => {
           <>
                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div className="container-fluid">
-                         <a className="navbar-brand" href="#">Trivia Me</a>
+                         <a className="navbar-brand" href="/#">Trivia Me</a>
                          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                               <span className="navbar-toggler-icon"></span>
                          </button>
@@ -23,7 +23,7 @@ const Navbar = (props) => {
                               <ul className="navbar-nav">
                                    {user_redux && user_redux.user_name ? (
                                         <li className="nav-item">
-                                             <a className="nav-link active" aria-current="/game" href="/game">Game</a>
+                                             <a className="nav-link active" href="/game">Game</a>
                                         </li>
                                    ) : null}
                                    <li className="nav-item">
@@ -36,12 +36,12 @@ const Navbar = (props) => {
                               <ul className="navbar-nav ms-auto">
                                    {user_redux && user_redux.user_name ? (
                                         <>
-                                             <img src={user_redux.profile_pic} id="profile_pic"/> 
+                                             <img src={user_redux.profile_pic} alt='Profile Pic' className="profile_pic"/> 
                                              <li className="nav-item">
                                                   <p className="nav-link" disabled>{user_redux.user_name}</p>
                                              </li>
                                              <li className="nav-item">
-                                                  <a className="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logoutmodal">LogOut</a>
+                                                  <a className="nav-link" href="/#" data-bs-toggle="modal" data-bs-target="#logoutmodal">LogOut</a>
                                              </li>
                                         </>
                                    ) : (

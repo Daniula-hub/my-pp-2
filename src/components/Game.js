@@ -74,7 +74,6 @@ const Game = (props) => {
                                                   <option value="29">Comics</option>
                                                   <option value="30">Gadgets</option>
                                                   <option value="31">Japanese Anime</option>
-                                                  <option value="32">Cartoon and Animations</option>
                                              </select>
                                         </div>
                                    </div>
@@ -104,13 +103,6 @@ const Game = (props) => {
                     (
                          <div className='container-fluid'>
                               <div className='row'>
-                                   {/* <div className='col-2'></div>
-                                   <div className='col-2'>
-                                        <img src={user_redux?.profile_pic} id="profile_pic"/>
-                                   </div>
-                                   <div className='col-4'>
-                                        <h1 className='welcome'>Welcome {user_redux?.user_name}!</h1>                                        
-                                   </div> */}
                                    <div className='col-2' >
                                         <h1 className='score'>Score: {score}</h1>
                                    </div>
@@ -128,6 +120,8 @@ const Game = (props) => {
                                              setScore={setScore}
                                              setQuestions={setQuestions}
                                              user={user_redux}
+                                             categoryId={category}
+                                             difficultyId={difficulty}
                                         />
                                    </div>
                                    <div className='col-2'></div>

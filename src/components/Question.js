@@ -16,7 +16,9 @@ const Question = ({
   setScore,
   score,
   setQuestions,
-  user
+  user,
+  categoryId,
+  difficultyId
 }) => {
   const [selected, setSelected] = useState();
   const [error, setError] = useState(false);
@@ -36,9 +38,22 @@ const Question = ({
   };
 
   const handleNext = () => {
+    switch (difficultyId) {
+      case 'easy':
+          difficultyId = 1;
+          break;
+      case 'medium':
+        difficultyId = 2;
+        break;
+      case 'hard':
+        difficultyId = 3;
+        break;
+      default:
+        break;
+    }
     if (currentQuestion > 8) {
       axios
-        .post('/saveScore', {user, score})
+        .post('/saveScore', {user, score, categoryId, difficultyId})
         .then(res => {
           history.push({
             pathname: '/highestscores',

@@ -17,7 +17,8 @@ const Login = (props) => {
           axios
             .post("/auth/register", { userName, password, email, gender, education, user_age })
             .then((res) => {
-               props.setUser({ user_name: res.data.user_name,
+               props.setUser({ user_id: res.data.user_id,
+                    user_name: res.data.user_name,
                     profile_pic: res.data.profile_pic,
                     highest_score: res.data.highest_score
                });
