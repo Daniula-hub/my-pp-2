@@ -57,7 +57,7 @@ const Question = ({
 
   const handleQuit = () => {
     setCurrentQuestion(0);
-    setQuestions();
+    setQuestions([]);
   };
 
   const htmlDecode = (input) => {
@@ -67,6 +67,7 @@ const Question = ({
   }
 
   return (
+    <>
     <div className="question">      
       <h2>Question #{currentQuestion + 1}</h2>
       <h3>{questions[currentQuestion].category}</h3>
@@ -83,8 +84,7 @@ const Question = ({
                 onClick={() => handleCheck(i)}
                 disabled={selected}
                 dangerouslySetInnerHTML={{ __html: htmlDecode(i)}}
-              />
-                
+              />    
             ))}
         </div>
         <div className="controls">
@@ -93,7 +93,9 @@ const Question = ({
         </div>
       </div>
     </div>
+    </>
   );
 };
+
 
 export default Question;

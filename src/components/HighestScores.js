@@ -77,13 +77,32 @@ const HighestScores = (props) => {
                     <div className='col-3'></div>
                </div>
                {user && score ? (
-                    <div className='row'>
-                         <div className='col-3'>
-                         <img src={user.profile_pic} id="profile_pic"/>
-                              <p>Hi {user.user_name}! Your latest score was {score}. Check if you are in the top ten.</p>
-                         </div>
-                    </div>
+                     <div className="modal fade" id="scoremodal" tabIndex="-1">
+                     <div className="modal-dialog">
+                     <div className="modal-content bg-dark">
+                          <div className="modal-header">
+                               <h5 className="modal-title text-light">Trivia Me</h5>
+                               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div className="modal-body text-light">
+                          <img src={user.profile_pic} id="profile_pic"/>
+                          <p>Hi {user.user_name}! Your latest score was {score}. Check if you are in the top ten.</p>
+                          </div>
+                          <div className="modal-footer">
+                               <button type="button" className="btn btn-success" data-bs-dismiss="modal">Close</button>
+                          </div>
+                     </div>
+                     </div>
+                     </div> 
+
+                    // <div className='row'>
+                    //      <div className='col-3'>
+                    //      <img src={user.profile_pic} id="profile_pic"/>
+                    //           <p>Hi {user.user_name}! Your latest score was {score}. Check if you are in the top ten.</p>
+                    //      </div>
+                    // </div>
                ) : null}
+               
           </div>
      );
 }

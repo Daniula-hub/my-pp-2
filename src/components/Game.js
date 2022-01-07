@@ -104,13 +104,13 @@ const Game = (props) => {
                     (
                          <div className='container-fluid'>
                               <div className='row'>
-                                   <div className='col-2'></div>
+                                   {/* <div className='col-2'></div>
                                    <div className='col-2'>
                                         <img src={user_redux?.profile_pic} id="profile_pic"/>
                                    </div>
                                    <div className='col-4'>
                                         <h1 className='welcome'>Welcome {user_redux?.user_name}!</h1>                                        
-                                   </div>
+                                   </div> */}
                                    <div className='col-2' >
                                         <h1 className='score'>Score: {score}</h1>
                                    </div>

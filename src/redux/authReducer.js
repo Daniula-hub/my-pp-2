@@ -24,7 +24,8 @@ export const updateUser = (user) => ({
    type: UPDATE_USER,
    payload: {
        username: user.user_name,
-       profilePic: user.profile_pic
+       profilePic: user.profile_pic,
+       highest_score: user.highest_score
    }
 });
 
