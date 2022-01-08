@@ -4,6 +4,7 @@ import  LogOut  from './components/LogOut';
 import  Register  from './components/Register';
 import Game from './components/Game';
 import HighestScores from './components/HighestScores';
+import Metrics from './components/Metrics';
 
 export default (
   <Switch>
@@ -21,5 +22,6 @@ export default (
     <Route path="/register" component={Register}/> 
     <Route path="/game" component={Game}/>
     <Route path="/highestscores" component={HighestScores}/>
+    <Route path="/metrics" component={Metrics}/>
   </Switch>
 );

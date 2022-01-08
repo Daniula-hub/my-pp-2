@@ -31,7 +31,7 @@ class Modal extends React.Component {
                               <p>Your latest score was {score}. Check if you are in the top ten.</p>
                               </div>
                               <div className="modal-footer">
-                                   <button type="button" className="btn btn-warning" data-bs-dismiss="modal" onClick={this.handleShow}>Cancel</button>
+                                   <button type="button" className="btn btn-warning" data-bs-dismiss="modal" onClick={this.handleShow}>Close</button>
                               </div>
                          </div>
                     </div>

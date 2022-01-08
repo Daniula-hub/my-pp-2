@@ -10,6 +10,7 @@ const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 
 const authCtrl = require('./controllers/authController');
 const highestScoresCtrl = require('./controllers/highestScoresController');
+const metricsController = require('./controllers/metricsController');
 
 // app instance created
 const app = express();
@@ -48,9 +49,14 @@ app.use(express.json());
 app.get("/auth/login", authCtrl.login);
 app.get("/auth/logout", authCtrl.logout);
 app.get("/auth/getUser", authCtrl.getUser);
-app.get("/getHighestScores", highestScoresCtrl.getScores);
 app.post("/auth/register", authCtrl.register);
+//Highest Scores
+app.get("/getHighestScores", highestScoresCtrl.getScores);
 app.post("/saveScore", highestScoresCtrl.saveScore);
+//Metrics
+app.get("/getCategoryByEducation", metricsController.getCategoryByEducation);
+app.get("/getDifficultyByCategory", metricsController.getDifficultyByCategory);
+app.get("/getEducationByhighestScores", metricsController.getEducationByhighestScores);
 
 
 

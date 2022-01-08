@@ -7,6 +7,7 @@ module.exports = {
           })
           .catch(err => {
                console.log("There was an error retrieving the highest scores: ", err);
+               res.status(500);
           })
      },
      saveScore: (req, res) => {
