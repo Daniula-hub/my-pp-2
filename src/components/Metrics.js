@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Chart from './Chart';
+import Charts from './Charts';
 
 const Metrics = (props) => {
      const [metricsData, setMetricsData] = useState([]);
@@ -24,16 +24,18 @@ const Metrics = (props) => {
 
      return(
           <div className='container-fluid'>
-               <div className='row'>
-                    {metricsData.map(metric => {
-                         let index = metricsData.indexOf(metric);
-                         return (
-                              <div className='col-4' key={index}>
-                                   <Chart metricData={metric} type={index === 0 ? 'doughnut' : index === 1 ? 'bar' : 'line'}/>
+               {metricsData.map(metric => {
+                    let index = metricsData.indexOf(metric);
+                    return (
+                         <div className='row' key={index}>
+                              <div className='col-2'></div>
+                              <div className='col-8'>
+                                   <Charts metricData={metric} type={index === 0 ? 'doughnut' : index === 1 ? 'bar' : 'line'}/>
                               </div>
-                         )
-                    })}
-               </div>
+                              <div className='col-2'></div>
+                         </div>
+                    )
+               })}
           </div>
      )
 }
