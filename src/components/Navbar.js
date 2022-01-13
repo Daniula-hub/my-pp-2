@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from "react-redux";
+import { NavLink, withRouter } from 'react-router-dom';
 import './styles/main.css';
 
 const Navbar = (props) => {
@@ -15,7 +16,7 @@ const Navbar = (props) => {
           <>
                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div className="container-fluid">
-                         <a className="navbar-brand" href="/#">Trivia Me</a>
+                         <a className="navbar-brand" href="#">Trivia Me</a>
                          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                               <span className="navbar-toggler-icon"></span>
                          </button>
@@ -23,14 +24,14 @@ const Navbar = (props) => {
                               <ul className="navbar-nav">
                                    {user_redux && user_redux.user_name ? (
                                         <li className="nav-item">
-                                             <a className="nav-link active" href="/game">Game</a>
+                                             <NavLink to="/game" className="nav-link" activeClassName="active">Game</NavLink>
                                         </li>
                                    ) : null}
                                    <li className="nav-item">
-                                        <a className="nav-link" href="/highestscores">Highest Scores</a>
+                                        <NavLink to="/highestscores" className="nav-link" activeClassName="active">Highest Scores</NavLink>
                                    </li>
                                    <li className="nav-item">
-                                        <a className="nav-link" href="/metrics">Metrics</a>
+                                        <NavLink to="/metrics" className="nav-link" activeClassName="active">Metrics</NavLink>
                                    </li>
                               </ul>
                               <ul className="navbar-nav ms-auto">
@@ -46,7 +47,7 @@ const Navbar = (props) => {
                                         </>
                                    ) : (
                                         <li className="nav-item">
-                                             <a className="nav-link" href="/login">LogIn</a>
+                                             <NavLink to="/login" className="nav-link" activeClassName="active">LogIn</NavLink>
                                         </li>
                                    )}
                               </ul>
@@ -76,4 +77,4 @@ const Navbar = (props) => {
      );
 };
 
-export default Navbar;
+export default withRouter(Navbar);

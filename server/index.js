@@ -11,6 +11,7 @@ const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 const authCtrl = require('./controllers/authController');
 const highestScoresCtrl = require('./controllers/highestScoresController');
 const metricsController = require('./controllers/metricsController');
+const emailCtrl = require("./controllers/emailController");
 
 // app instance created
 const app = express();
@@ -57,10 +58,8 @@ app.post("/saveScore", highestScoresCtrl.saveScore);
 app.get("/getCategoryByEducation", metricsController.getCategoryByEducation);
 app.get("/getDifficultyByCategory", metricsController.getDifficultyByCategory);
 app.get("/getEducationByhighestScores", metricsController.getEducationByhighestScores);
-
-
-
 //NODEMAILER
+app.post('/sendEmail', emailCtrl.sendEmail)
 
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on ${SERVER_PORT}`)

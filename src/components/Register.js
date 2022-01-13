@@ -22,9 +22,14 @@ const Login = (props) => {
                     profile_pic: res.data.profile_pic,
                     highest_score: res.data.highest_score
                });
-              props.history.push("/game");
+               axios.post('/sendEmail')
+               .then(res => {
+                    console.log('Email was sent');
+               })
+               .catch(err => console.log("There was an error sending the email to the user.", err));
+               props.history.push("/game");
             })
-            .catch((err) => console.log(err));
+            .catch((err) => console.log("There was an error registering the user: ", err));
      };
      
      return (
@@ -70,6 +75,7 @@ const Login = (props) => {
                                              <option value="1">School</option>
                                              <option value="2">High School</option>
                                              <option value="3">College</option>
+                                             <option value="4">Other</option>
                                         </select>
                                    </div>
                               </div>
