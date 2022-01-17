@@ -42,7 +42,7 @@ app.use(
 
 app.use(express.json());
 
-
+app.use(express.static(`${__dirname}/../build`));
 
 // endpoints
 
@@ -62,5 +62,7 @@ app.get("/getEducationByhighestScores", metricsController.getEducationByhighestS
 app.post('/sendEmail', emailCtrl.sendEmail)
 
 
-app.listen(SERVER_PORT, () => console.log(`Server listening on ${SERVER_PORT}`)
+const port = process.env.PORT || process.env.SERVER_PORT || 3001;
+
+app.listen(port, () => console.log(`Server listening on ${port}`)
 );
