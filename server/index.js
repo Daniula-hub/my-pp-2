@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
+const path = require("path");
 
 const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 
@@ -61,7 +62,7 @@ app.get("/getEducationByhighestScores", metricsController.getEducationByhighestS
 //NODEMAILER
 app.post('/sendEmail', emailCtrl.sendEmail)
 
-app.get('/*', function(req, res) { res.sendFile(path.join(__dirname, '../public/index.html'), function(err) { if (err) { res.status(500).send(err)}}) })
+app.get('/*', function(req, res) { res.sendFile(path.join(__dirname, '../build/index.html'), function(err) { if (err) { res.status(500).send(err)}}) })
 const port = process.env.PORT || process.env.SERVER_PORT || 3001;
 
 app.listen(port, () => console.log(`Server listening on ${port}`)
