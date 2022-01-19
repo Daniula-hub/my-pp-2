@@ -25,7 +25,7 @@ const Login = (props) => {
         
      const handleRegister = () => {
           {
-               window.location = 'http://localhost:3000/register'
+               window.location = '/register'
           }
      };
 

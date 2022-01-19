@@ -8,7 +8,7 @@ const Navbar = (props) => {
 
      const handleLogOut = () => {
           {
-               window.location = 'http://localhost:3000/logout'
+               window.location = '/logout'
           }
      }
 
