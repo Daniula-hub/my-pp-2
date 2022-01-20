@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/highestScores.css';
+import './styles/Modal.css';
 
 class Modal extends React.Component {
      constructor(props) {
@@ -28,7 +29,7 @@ class Modal extends React.Component {
                               </div>
                               <div className="modal-body text-light">
                               <img src={user.profile_pic} alt='Profile Pic' id="profile_pic"/>
-                              <p>Your latest score was {score}. Check if you are in the top ten.</p>
+                              <p className="latestScore">Your latest score was {score}. Check if you are in the top ten.</p>
                               </div>
                               <div className="modal-footer">
                                    <button type="button" className="btn btn-warning" data-bs-dismiss="modal" onClick={this.handleShow}>Close</button>
