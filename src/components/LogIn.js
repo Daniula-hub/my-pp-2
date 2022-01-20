@@ -54,7 +54,7 @@ const Login = (props) => {
                                         <button type="button" className="btn btn-dark btn-lg" onClick={handleRegister}>Register</button>
                                    </div>
                                    <div className='col-3'></div>
-                                   <iframe src="https://giphy.com/embed/xTiN0IuPQxRqzxodZm" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/studiosoriginals-gilphabet-xTiN0IuPQxRqzxodZm"></a></p>
+                                   <iframe src="https://giphy.com/embed/xTiN0IuPQxRqzxodZm" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/studiosoriginals-gilphabet-xTiN0IuPQxRqzxodZm">via GIPHY</a></p>
                               </div>
                          </form>
                     </div>
