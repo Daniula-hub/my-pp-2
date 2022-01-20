@@ -28,7 +28,7 @@ class Modal extends React.Component {
                                    <button type="button" className="btn-close" data-bs-dismiss="modal" onClick={this.handleShow} aria-label="Close"></button>
                               </div>
                               <div className="modal-body text-light">
-                              <img src={user.profile_pic} alt='Profile Pic' id="profile_pic"/>
+                              <img className="robot" src={user.profile_pic} alt='Profile Pic' id="profile_pic"/>
                               <p className="latestScore">Your latest score was {score}. Check if you are in the top ten.</p>
                               </div>
                               <div className="modal-footer">
