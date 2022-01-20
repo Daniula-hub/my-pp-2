@@ -2,9 +2,12 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 25%;
 }
 
-p.latestScore {
+h3{
     font-size: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
