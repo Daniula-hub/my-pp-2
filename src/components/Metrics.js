@@ -27,7 +27,7 @@ const Metrics = (props) => {
                {metricsData.map(metric => {
                     let index = metricsData.indexOf(metric);
                     return (
-                         <div className='row' key={index}>
+                         <div className='row' key={index} style={{marginTop: '7rem'}}>
                               <div className='col-2'></div>
                               <div className='col-8'>
                                    <Charts metricData={metric} type={index === 0 ? 'doughnut' : index === 1 ? 'bar' : 'line'}/>

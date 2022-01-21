@@ -90,6 +90,19 @@ const Login = (props) => {
                     </div>
                     <div className='col-3'></div>
                </div>
+               <div className='row'>
+                    <nav className="navbar navbar-light bg-light bottom">
+                         <div className='col-12 center'>
+                         <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/Boom.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/Boom.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/Boom.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                         </div>
+                    </nav>
+               </div>  
                
           </div>
      );

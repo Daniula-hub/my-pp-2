@@ -1,4 +1,5 @@
 #profile_pic {
+    background-image: url('~/public/resources/alert.jpg');
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -10,7 +11,7 @@
     font-size: 20px;
 }
 
-h3{
-    font-size: 20px;
+.latestScore{
     text-align: center;
+    margin-top: 2rem;
 }

@@ -67,3 +67,5 @@ const port = process.env.PORT || process.env.SERVER_PORT || 3001;
 
 app.listen(port, () => console.log(`Server listening on ${port}`)
 );
+
+// "start": "node server/index.js",

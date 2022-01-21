@@ -14,3 +14,25 @@ input {
   button {
     width: 200px;
   }
+
+  .bottom {
+    position: fixed;
+    bottom: 0;
+  }
+  
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image-style {
+    height: 250px;
+    border: 5px solid rgb(19, 127, 135);
+  }
+  
+  @media screen and (max-height: 555px) {
+
+    .bottom {
+      display: none;
+    }
+  }

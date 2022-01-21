@@ -1,5 +1,14 @@
+
 .scores-table {
-    margin-top: 5rem;
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+    opacity: 0.90;
+  }
+
+  .hs-image {
+    background-image: url('~/public/resources/screenshot.png');
+    background-repeat: no-repeat;
+    background-size: cover;  
   }
   
   #profile_pic {
@@ -8,3 +17,5 @@
     display: flex;
     justify-items: center;
   }
+
+ 

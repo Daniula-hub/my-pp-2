@@ -54,11 +54,11 @@ const HighestScores = (props) => {
                {user && score ? (
                      <Modal user={user} score={score} completePage={true}/>
                ) : null}
-               <div className='container-fluid'>
+               <div className='container-fluid hs-image'>
                     <div className='row'>
                          <div className='col-3'></div>
                          <div className='col-6 scores-table'>
-                              <table className="table table-dark table-striped">
+                              <table className="table table-dark table-hover">
                                    <thead>
                                         <tr>
                                              <th scope="col">#</th>

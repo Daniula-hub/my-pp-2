@@ -95,6 +95,22 @@ const Game = (props) => {
                                         </div>
                                    </div>
                                    </div>
+                                   <div className='row'>
+                    <nav className="navbar navbar-light bg-light bottom">
+                         <div className='col-12 center'>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/pop.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/pop.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/pop.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/> 
+                              <img src="./resources/pop.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/> 
+                              <img src="./resources/pop.png" className='img-fluid image-style' alt=""/>
+                         </div>
+                    </nav>
+               </div> 
                               </form>
                               </div>
                               <div className='col-2'></div>
@@ -103,11 +119,13 @@ const Game = (props) => {
                     (
                          <div className='container-fluid'>
                               <div className='row'>
+                                   {/* <div class="bg-image" style="background-image: url('~/public/resources/colorful.jpg'); height: 100vh"></div> */}
+                              <img class="img-fluid" src= "./resources/final.png" alt='Colorful Pic' id="colorful"/>
                                    <div className='col-2' >
                                         <h1 className='score'>Score: {score}</h1>
                                    </div>
                               </div>
-                              <div className='row'>
+                              <div className='row' id="question-container">
                                    <div className='col-2'></div>
                                    <div className='col-8'>
                                         <Question 
@@ -127,9 +145,11 @@ const Game = (props) => {
                                    <div className='col-2'></div>
                               </div>
                          </div>
+                         
                     )
                }
           </div>
+          
      );
 }
 

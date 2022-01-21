@@ -36,11 +36,11 @@ const Login = (props) => {
                     <div className='col-6'>
                          <form>
                               <div className="row">
-                                   <div className="form-group col-md-6">
+                                   <div className="form-group col-lg-6">
                                         <label htmlFor="inputUserName">User Name</label>
                                         <input type="text" className="form-control" id="inputUserName" placeholder="User Name" onChange={(e) => setUserName(e.target.value)} />
                                    </div>
-                                   <div className="form-group col-md-6">
+                                   <div className="form-group col-lg-6">
                                         <label htmlFor="inputPassword4">Password</label>
                                         <input type="password" className="form-control" id="inputPassword4" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                                    </div>
@@ -54,12 +54,25 @@ const Login = (props) => {
                                         <button type="button" className="btn btn-dark btn-lg" onClick={handleRegister}>Register</button>
                                    </div>
                                    <div className='col-3'></div>
-                                   <iframe src="https://giphy.com/embed/wH4rY2nPnEnp6" width="400" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/animography-animated-typography-font-wH4rY2nPnEnp6">via GIPHY</a></p>
                               </div>
                          </form>
                     </div>
                     <div className='col-3'></div>
                </div>
+               <div className='row'>
+                    <nav className="navbar navbar-light bg-light bottom">
+                         <div className='col-12 center'>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/awesome.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/awesome.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/awesome.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/> 
+                              <img src="./resources/awesome.png" className='img-fluid image-style' alt=""/>
+                         </div>
+                    </nav>
+               </div>             
           </div>
      );
 }
