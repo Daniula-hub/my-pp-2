@@ -94,12 +94,13 @@ const Login = (props) => {
                     <nav className="navbar navbar-light bg-light bottom">
                          <div className='col-12 center'>
                          <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/Boom.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/quiz.webp" className='img-fluid image-style' alt=""/>
                               <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/Boom.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/quiz.webp" className='img-fluid image-style' alt=""/>
                               <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/Boom.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/quiz.webp" className='img-fluid image-style' alt=""/>
                               <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/quiz.webp" className='img-fluid image-style' alt=""/>
                          </div>
                     </nav>
                </div>  

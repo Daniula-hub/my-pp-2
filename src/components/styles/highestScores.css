@@ -1,14 +1,23 @@
 
 .scores-table {
-    margin-top: 15rem;
+    margin-top: 10rem;
     margin-bottom: 5rem;
-    opacity: 0.90;
+    /* opacity: 0.90; */
   }
 
   .hs-image {
-    background-image: url('~/public/resources/screenshot.png');
+    background-image: url('~/public/resources/cup.jpeg');
+    background-position: center center;
+    /* background-attachment: fixed; */
     background-repeat: no-repeat;
-    background-size: cover;  
+    background-size:auto;  
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    opacity: 0.8;
   }
   
   #profile_pic {
@@ -18,4 +27,9 @@
     justify-items: center;
   }
 
+  /* .col-color {
+    background-color: white;
+    height: 100vh;
+  
+  } */
  

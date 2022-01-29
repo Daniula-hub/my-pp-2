@@ -14,8 +14,8 @@ module.exports = {
           const {user, score, categoryId, difficultyId} = req.body;
           const db = req.app.get('db');
  
-          if(user && score){
-               db.games.create_games(score, user.user_id, categoryId, difficultyId)
+          if(user){
+               db.games.create_games(score ? score : 0, user.user_id, categoryId, difficultyId)
                .then(data => {
                     db.highestScores.save_score(user.user_name, score)
                     .then(data => {

@@ -3,7 +3,7 @@ import axios from "axios";
 import { setUser } from "../redux/authReducer";
 import { useState } from "react";
 import { connect } from "react-redux";
-import './styles/forms.css';
+import './styles/Login.css';
 
 const Login = (props) => {
      const [userName, setUserName] = useState("");
@@ -62,14 +62,14 @@ const Login = (props) => {
                <div className='row'>
                     <nav className="navbar navbar-light bg-light bottom">
                          <div className='col-12 center'>
-                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/awesome.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/awesome.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/awesome.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/> 
-                              <img src="./resources/awesome.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-border-login' alt=""/>
+                              <img src="./resources/awesome.png" className='img-fluid image-border-login' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-border-login' alt=""/>
+                              <img src="./resources/awesome.png" className='img-fluid image-border-login' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-border-login' alt=""/>
+                              <img src="./resources/awesome.png" className='img-fluid image-border-login' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-border-login' alt=""/> 
+                              <img src="./resources/awesome.png" className='img-fluid image-border-login' alt=""/>
                          </div>
                     </nav>
                </div>             

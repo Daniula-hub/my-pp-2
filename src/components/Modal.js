@@ -31,7 +31,7 @@ class Modal extends React.Component {
                               <div className="modal-body text-muted">
                               <img className="robot" src={user.profile_pic} alt='Profile Pic' id="profile_pic"/>
                               {/* <img class="img-fluid" src= "./resources/alert.jpg" alt='Profile Pic' id="alert"/> */}
-                              <h3 className="latestScore">Your latest score was {score} .  Check if you are in the top ten!</h3>
+                              <h3 className="latestScore">Your latest score was {score ? score : 0} .  Check if you are in the top ten!</h3>
                               </div>
                               <div className="modal-footer">
                                    <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={this.handleShow}>Close</button>

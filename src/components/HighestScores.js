@@ -10,7 +10,7 @@ const HighestScores = (props) => {
      let score;
      if(props.history.location){
           user = props.history.location.state?.user;
-          score = props.history.location.state?.score;
+          score = props.history.location.state?.score || 0;
      }
 
      useEffect(() => {
@@ -56,9 +56,9 @@ const HighestScores = (props) => {
                ) : null}
                <div className='container-fluid hs-image'>
                     <div className='row'>
-                         <div className='col-3'></div>
-                         <div className='col-6 scores-table'>
-                              <table className="table table-dark table-hover">
+                         <div className='col-1 col-color'></div>
+                         <div className='col-12 scores-table'>
+                              <table className="table table-hover">
                                    <thead>
                                         <tr>
                                              <th scope="col">#</th>
@@ -79,7 +79,7 @@ const HighestScores = (props) => {
                                    </tbody>
                               </table>
                          </div>
-                         <div className='col-3'></div>
+                         <div className='col-1 col-color'></div>
                     </div>                              
                </div>               
           </>

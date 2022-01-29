@@ -1,19 +1,39 @@
  
  .score {
-    margin-top: 6rem;
-    color: rgb(39, 136, 169);
+    margin-top: 7rem;
+    color:white;
   }
 
-  #question-container {
+  /* #question-container {
     margin-bottom: 4rem;
-  }
+  } */
   
   .center {
     display: flex;
     justify-content: center;
   }
   
-  .image-style {
+  .image-border-game {
     height: 250px;
-    border: 5px solid rgb(27, 171, 27);
+    border: 5px solid #1219df;
+  }
+
+  #colorful {
+    opacity: 0.4;
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+  }
+
+  .container-fix {
+    /* background-image: url("~/public/resources/background.jpeg"); */
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:auto;
+  }
+
+  .color-style {
+    background-image: url("~/public/resources/background.jpeg");
+    opacity: 0.89;
   }

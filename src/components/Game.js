@@ -98,16 +98,17 @@ const Game = (props) => {
                                    <div className='row'>
                     <nav className="navbar navbar-light bg-light bottom">
                          <div className='col-12 center'>
-                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/pop.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/pop.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/pop.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/> 
-                              <img src="./resources/pop.png" className='img-fluid image-style' alt=""/>
-                              <img src="./resources/question.png" className='img-fluid image-style' alt=""/> 
-                              <img src="./resources/pop.png" className='img-fluid image-style' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-border-game' alt=""/>
+                              <img src="./resources/pop.png" className='img-fluid image-border-game' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-border-game' alt=""/>
+                              <img src="./resources/pop.png" className='img-fluid image-border-game' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-border-game' alt=""/>
+                              <img src="./resources/pop.png" className='img-fluid image-border-game' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-border-game' alt=""/> 
+                              <img src="./resources/pop.png" className='img-fluid image-border-game' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-border-game' alt=""/> 
+                              <img src="./resources/pop.png" className='img-fluid image-border-game' alt=""/>
+                              <img src="./resources/question.png" className='img-fluid image-border-game' alt=""/> 
                          </div>
                     </nav>
                </div> 
@@ -117,16 +118,21 @@ const Game = (props) => {
                          </div>
                     </div> : 
                     (
-                         <div className='container-fluid'>
-                              <div className='row'>
-                                   {/* <div class="bg-image" style="background-image: url('~/public/resources/colorful.jpg'); height: 100vh"></div> */}
-                              <img class="img-fluid" src= "./resources/final.png" alt='Colorful Pic' id="colorful"/>
-                                   <div className='col-2' >
+                         <div className='container-fluid' >
+                              <div className="row" >
+                              {/* <img  src= "./resources/quiz.webp" alt='Colorful Pic' id="colorful"/> */}
+                                   <div className='col-2 color-style' >
                                         <h1 className='score'>Score: {score}</h1>
                                    </div>
+                                   <div className="col-8 container-fix">
+
+                                   </div>
+                                   <div className="col-2 color-style">
+
+                                   </div>
                               </div>
-                              <div className='row' id="question-container">
-                                   <div className='col-2'></div>
+                              <div className="row container-fix">
+                                   <div className='col-2 color-style'></div>
                                    <div className='col-8'>
                                         <Question 
                                              currentQuestion={currentQuestion}
@@ -142,7 +148,7 @@ const Game = (props) => {
                                              difficultyId={difficulty}
                                         />
                                    </div>
-                                   <div className='col-2'></div>
+                                   <div className='col-2 color-style'></div>
                               </div>
                          </div>
                          
